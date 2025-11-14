@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Buku -->
+  <g transform="translate(50, 50)">
+    <!-- Spine buku (garis tengah) -->
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#9333ea" stroke-width="2"/>
+    
+    <!-- Halaman kiri -->
+    <rect x="-18" y="-18" width="16" height="36" fill="none" stroke="#9333ea" stroke-width="2" rx="1"/>
+    
+    <!-- Halaman kanan -->
+    <rect x="2" y="-18" width="16" height="36" fill="none" stroke="#9333ea" stroke-width="2" rx="1"/>
+    
+    <!-- Garis-garis di halaman kiri -->
+    <line x1="-16" y1="-12" x2="-4" y2="-12" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-16" y1="-6" x2="-4" y2="-6" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-16" y1="0" x2="-4" y2="0" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-16" y1="6" x2="-4" y2="6" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-16" y1="12" x2="-8" y2="12" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    
+    <!-- Garis-garis di halaman kanan -->
+    <line x1="4" y1="-12" x2="16" y2="-12" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="4" y1="-6" x2="16" y2="-6" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="4" y1="0" x2="16" y2="0" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="4" y1="6" x2="16" y2="6" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+    <line x1="4" y1="12" x2="12" y2="12" stroke="#9333ea" stroke-width="1.5" opacity="0.6"/>
+  </g>
+</svg>
