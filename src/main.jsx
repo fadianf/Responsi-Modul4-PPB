@@ -1,7 +1,5 @@
 import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { StrictMode, useState } from 'react';
-import { createRoot } from 'react-dom/client';
 import SplashScreen from './components/splash/SplashScreen';
 import HomePage from './pages/HomePage';
 import TodosPage from './pages/TodosPage';

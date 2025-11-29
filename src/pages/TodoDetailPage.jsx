@@ -4,7 +4,6 @@ import { useTodo } from '../hooks/useTodos';
 import { formatDate, formatRelativeTime, getPriorityColor } from '../utils/helpers';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ConfirmModal from '../components/common/ConfirmModal';
-import useToast from '../hooks/useToast';
 import TodoForm from '../components/todos/TodoForm';
 import todoService from '../services/todoService';
 
@@ -23,19 +22,17 @@ export default function TodoDetailPage({ todoId, onBack }) {
     }
   };
 
-  const toast = useToast();
-
   const handleDelete = async () => {
     try {
       setDeleting(true);
       const result = await todoService.deleteTodo(todoId);
       if (result.success) {
-        toast.addToast({ message: 'Task deleted successfully!', type: 'success' });
+        alert('Task deleted successfully!');
         onBack();
       }
     } catch (error) {
       console.error('Error deleting todo:', error);
-      toast.addToast({ message: 'Failed to delete task', type: 'error' });
+      alert('Failed to delete task');
     } finally {
       setDeleting(false);
     }

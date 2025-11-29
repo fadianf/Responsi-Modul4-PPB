@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { User, Mail, Edit2, Camera, Save } from 'lucide-react';
 import { getUserProfile, saveUserProfile } from '../services/userService';
-import useToast from '../hooks/useToast';
 import { useTodos } from '../hooks/useTodos';
 import { useJournals } from '../hooks/useJournals';
 
@@ -34,13 +33,12 @@ export default function ProfilePage() {
     }
   };
 
-  const toast = useToast();
   const handleSave = () => {
     const result = saveUserProfile(editData);
     if (result.success) {
       setProfile(result.data);
       setIsEditing(false);
-      toast.addToast({ message: 'Profile updated successfully!', type: 'success' });
+      alert('Profile updated successfully!');
     }
   };
 
