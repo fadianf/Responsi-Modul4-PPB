@@ -5,6 +5,7 @@ import { formatDate, formatRelativeTime } from '../../utils/helpers';
 import { MOODS } from '../../utils/constants';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import ConfirmModal from '../components/common/ConfirmModal';
+import useToast from '../hooks/useToast';
 import JournalForm from '../components/journal/JournalForm';
 import journalService from '../../services/journalService';
 
@@ -14,17 +15,19 @@ export default function JournalDetailPage({ journalId, onBack }) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
+  const toast = useToast();
+
   const handleDelete = async () => {
     try {
       setDeleting(true);
       const result = await journalService.deleteJournal(journalId);
       if (result.success) {
-        alert('Journal deleted successfully!');
+        toast.addToast({ message: 'Journal deleted successfully!', type: 'success' });
         onBack();
       }
     } catch (error) {
       console.error('Error deleting journal:', error);
-      alert('Failed to delete journal');
+      toast.addToast({ message: 'Failed to delete journal', type: 'error' });
     } finally {
       setDeleting(false);
     }
